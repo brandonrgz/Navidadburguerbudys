@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#120d12">
+<meta name="description" content="BURGER BUDYS: hamburguesas, tacos, burritos, alitas y bebidas. Ubicación, Facebook y pedidos por WhatsApp.">
+<title>Burger Budys | Menú de temporada</title>
+<style>
+:root{--bg:#081711;--panel:#10251b;--orange:#c62828;--gold:#e8c76a;--cream:#fff8e8;--muted:#c9d8cd;--pink:#e34b55}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 90% 0%,#174b32 0,transparent 38%),var(--bg);color:var(--cream);font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+header{padding:22px 18px 30px;text-align:center;position:relative;overflow:hidden;border-bottom:1px solid #b58b43;background:linear-gradient(135deg,#082016,#17452d 60%,#081711)}
+header:before{content:"❄  ✦  🎄  ✦  ❄";display:block;color:var(--gold);letter-spacing:8px;font-size:20px;margin-bottom:12px}
+.brand{font-weight:1000;font-stretch:condensed;letter-spacing:-2px;font-size:clamp(2.6rem,10vw,5.3rem);line-height:.95;color:#fff;text-shadow:3px 3px 0 #a51f2b}
+.brand span{color:#e8c76a}.tag{margin:16px auto 0;max-width:540px;color:#f4e7c4}
+.hero-badges{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:18px}.pill{border:1px solid #b58b43;background:#123322;border-radius:999px;padding:7px 12px;font-size:.82rem}
+nav{position:sticky;top:0;z-index:4;background:#081711ed;backdrop-filter:blur(12px);padding:10px;display:flex;gap:8px;overflow:auto;border-bottom:1px solid #315c43}
+nav a{white-space:nowrap;text-decoration:none;color:var(--cream);border:1px solid #456b50;border-radius:999px;padding:8px 12px;font-size:.86rem}nav a:hover{background:#44212b}
+main{max-width:1100px;margin:auto;padding:20px 14px 120px}.intro{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:8px 0 18px}.intro h2{font-size:1.45rem;margin:0}.intro p{color:var(--muted);margin:5px 0 0;font-size:.9rem}
+.section{margin:30px 0;scroll-margin-top:70px}.section-title{display:flex;align-items:center;gap:10px;margin-bottom:14px}.section-title .emoji{font-size:1.8rem}.section-title h2{font-size:1.45rem;text-transform:uppercase;letter-spacing:.5px;margin:0}.section-title:after{content:"";height:2px;background:linear-gradient(90deg,var(--orange),transparent);flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,245px),1fr));gap:12px}.item{background:linear-gradient(150deg,#173b29,#102219);border:1px solid #456b50;border-radius:17px;padding:15px;display:flex;flex-direction:column;min-height:175px;box-shadow:0 8px 25px #0002}.item-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.item h3{margin:0;font-size:1.05rem;text-transform:uppercase}.price{color:var(--gold);font-weight:900;white-space:nowrap;font-size:1.08rem}.desc{color:#d9e6dc;font-size:.88rem;line-height:1.5;margin:8px 0 14px;flex:1}.add{border:0;background:linear-gradient(90deg,#c62828,#e8c76a);color:#fff8e8;font-weight:900;border-radius:10px;padding:11px 12px;font-size:.95rem;cursor:pointer}.add:active{transform:scale(.98)}
+.note{border:1px dashed #8a4c35;background:#123322;border-radius:14px;padding:14px;color:#ffe1b3;text-align:center;margin-top:22px}
+.cartbar{position:fixed;bottom:0;left:0;right:0;z-index:10;padding:12px max(14px,env(safe-area-inset-right)) calc(12px + env(safe-area-inset-bottom)) max(14px,env(safe-area-inset-left));background:#081711f2;backdrop-filter:blur(14px);border-top:1px solid #456b50;display:flex;align-items:center;justify-content:center}
+.cartbtn{width:min(100%,700px);display:flex;align-items:center;justify-content:space-between;gap:12px;border:0;border-radius:14px;padding:14px 16px;background:#25d366;color:#062c15;font-weight:900;font-size:1rem;cursor:pointer}.cartbtn small{display:block;font-weight:600;font-size:.78rem}
+dialog{width:min(94vw,540px);max-height:85vh;overflow:auto;border:1px solid #b58b43;border-radius:20px;background:#10251b;color:var(--cream);padding:20px;box-shadow:0 20px 90px #000b}dialog::backdrop{background:#000b}dialog h2{margin:0 0 8px}.cartline{display:grid;grid-template-columns:1fr auto;gap:8px;padding:12px 0;border-bottom:1px solid #315c43}.qty{display:flex;gap:8px;align-items:center}.qty button,.close{border:1px solid #64806a;background:#183a29;color:white;border-radius:8px;padding:5px 10px;font-size:1rem}.total{display:flex;justify-content:space-between;font-size:1.2rem;font-weight:900;padding:15px 0;color:var(--gold)}label{display:block;margin:12px 0 5px;font-size:.9rem;color:#f0dce4}input,select,textarea{width:100%;border-radius:10px;border:1px solid #64806a;background:#081711;color:#fff;padding:12px;font:inherit}textarea{min-height:70px;resize:vertical}.send{width:100%;border:0;border-radius:12px;padding:14px;background:#25d366;color:#052c14;font-weight:900;font-size:1rem;margin-top:12px}.smallprint{font-size:.78rem;color:#c9d8cd;line-height:1.5}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:14px;margin-top:16px}.info-card{background:linear-gradient(150deg,#173b29,#102219);border:1px solid #b58b43;border-radius:17px;padding:18px}.info-card h3{margin:0 0 8px;color:var(--gold)}.info-card p{color:#d9e6dc;line-height:1.55;font-size:.92rem}.action-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;background:linear-gradient(90deg,#c62828,#e8c76a);color:#fff8e8;font-weight:900;border-radius:10px;padding:11px 14px;margin:5px 5px 0 0}.action-link.social{background:#25d366;color:#052c14}.address-line{font-weight:700;color:var(--cream)}footer{text-align:center;color:#bdaab5;padding:20px 15px 100px;font-size:.82rem}footer strong{color:var(--gold)}
+
+/* Decoración navideña animada, sin bloquear botones */
+.christmas-sky{position:fixed;inset:0;pointer-events:none;z-index:3;overflow:hidden;contain:strict}
+.christmas{position:absolute;display:block;opacity:.0;filter:drop-shadow(0 2px 5px #0008);animation:christmas-drift 12s linear infinite;will-change:transform,opacity}
+.christmas.snow{font-size:clamp(1.1rem,3vw,2rem);top:15%;left:-8%;animation-duration:17s;animation-delay:-7s}
+.christmas.tree{font-size:clamp(1.4rem,4vw,2.5rem);top:45%;left:-10%;animation-duration:22s;animation-delay:-13s}
+.christmas.gift{font-size:clamp(1.3rem,3.5vw,2.2rem);top:72%;left:-8%;animation-duration:19s;animation-delay:-4s}
+.christmas.star{font-size:clamp(1.1rem,3vw,1.8rem);top:5%;left:75%;animation-duration:15s;animation-delay:-9s}
+@keyframes christmas-drift{0%{transform:translate3d(-5vw,-8vh,0) rotate(-12deg);opacity:0}8%{opacity:.78}45%{transform:translate3d(48vw,8vh,0) rotate(16deg);opacity:.72}90%{opacity:.65}100%{transform:translate3d(115vw,-4vh,0) rotate(-18deg);opacity:0}}
+@keyframes candle-flicker{0%,100%{text-shadow:0 0 7px #ff791855}50%{text-shadow:0 0 18px #ff7918aa,0 0 30px #ffbd4a55}}
+.brand span{animation:candle-flicker 2.8s ease-in-out infinite}
+.pill:first-child{animation:candle-flicker 3.5s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){.spooky,.brand span,.pill:first-child{animation:none!important;opacity:.5}.christmas-sky{display:none}html{scroll-behavior:auto}}
+
+</style>
+</head>
+<body>
+<div class="christmas-sky" aria-hidden="true"><span class="christmas snow">❄️</span><span class="christmas tree">🎄</span><span class="christmas gift">🎁</span><span class="christmas star">⭐</span></div>
+<header>
+ <div class="brand">BURGER <span>BUDYS</span></div>
+ <p class="tag">🎄 Esta Navidad, celebra con mucho sabor. ✨<br>¡El mejor antojo para compartir en estas fiestas!</p>
+ <div class="hero-badges"><span class="pill">🎅 Sabor para compartir</span><span class="pill">🎁 Hecho al momento</span><span class="pill">📲 Pide por WhatsApp</span></div>
+</header>
+<nav aria-label="Categorías">
+<a href="#hamburguesas">🍔 Hamburguesas</a><a href="#tacos">🌮 Tacos</a><a href="#burritos">🌯 Burritos</a><a href="#alitas">🍗 Alitas</a><a href="#bebidas">🥤 Bebidas</a><a href="#ubicacion">📍 Ubicación</a><a href="#redes">📱 Redes</a>
+</nav>
+<main>
+<div class="intro"><div><h2>Menú navideño</h2><p>Elige tus favoritos y arma tu pedido.</p></div><span style="font-size:2.4rem">🎄</span></div>
+<div id="menu"></div>
+<div class="note">🍟 <strong>Todas nuestras órdenes llevan papas.</strong><br>Los pedidos se confirman directamente por WhatsApp.</div>
+<section class="section" id="ubicacion">
+ <div class="section-title"><span class="emoji">📍</span><h2>Encuéntranos</h2></div>
+ <div class="info-grid"><article class="info-card"><h3>📌 BURGER BUDYS</h3><p class="address-line">Calle Julio Pardiñas 4013, Moderna de la Cruz</p><p>Abre la búsqueda en Google Maps para consultar la ubicación y obtener indicaciones. <strong>Confirma que el pin corresponda a la entrada correcta antes de acudir</strong>, ya que no se proporcionó un enlace directo del Perfil de Google.</p><a class="action-link" href="https://www.google.com/maps/search/?api=1&query=BURGER%20BUDYS%20Calle%20Julio%20Pardi%C3%B1as%204013%20Moderna%20de%20la%20Cruz%20Toluca" target="_blank" rel="noopener noreferrer">🗺️ Buscar en Google Maps</a></article>
+ <article class="info-card"><h3>🛵 Pide como prefieras</h3><p>Contamos con opción para recoger en el local o solicitar entrega a domicilio. Confirma cobertura, costo y tiempo de entrega directamente con nosotros.</p><a class="action-link social" href="https://wa.me/527297181966?text=Hola%20BURGER%20BUDYS%2C%20quiero%20consultar%20mi%20pedido." target="_blank" rel="noopener noreferrer">💬 Contactar por WhatsApp</a></article></div>
+</section>
+<section class="section" id="redes">
+ <div class="section-title"><span class="emoji">📱</span><h2>Síguenos en redes</h2></div>
+ <div class="info-grid"><article class="info-card"><h3>Facebook</h3><p>Sigue a BURGER BUDYS para ver novedades, fotos y promociones.</p><a class="action-link" href="https://www.facebook.com/share/1FMrmS7e7L/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">👍 Visitar Facebook</a></article>
+ <article class="info-card"><h3>Instagram y TikTok</h3><p>Aún no se han proporcionado perfiles oficiales para estas redes, así que no añadimos enlaces inventados.</p></article></div>
+</section>
+</main>
+<footer><strong>BURGER BUDYS</strong><br>Hecho con sabor y espíritu navideño. 🎄✨</footer>
+<div class="cartbar"><button class="cartbtn" onclick="openCart()"><span>🛒 Ver mi pedido <small id="cartCount">0 productos</small></span><span id="cartTotal">$0</span></button></div>
+<dialog id="cartDialog">
+ <div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><h2>Tu pedido 🎄</h2><button class="close" onclick="closeCart()" aria-label="Cerrar">✕</button></div>
+ <div id="cartItems"></div><div class="total"><span>Total estimado</span><span id="dialogTotal">$0</span></div>
+ <label for="customer">Nombre para el pedido</label><input id="customer" placeholder="¿A nombre de quién?" autocomplete="name">
+ <label for="service">¿Cómo recibirás tu pedido?</label><select id="service"><option value="Por confirmar">Por confirmar</option><option value="Recoger en el local">Recoger en el local</option><option value="Entrega a domicilio">Entrega a domicilio</option><option value="Recoger en el local o entrega a domicilio">Ambas opciones (confirmar por WhatsApp)</option></select>
+ <label for="address">Dirección / indicaciones (opcional)</label><input id="address" placeholder="Colonia, calle o referencia">
+ <label for="notes">Notas del pedido (opcional)</label><textarea id="notes" placeholder="Salsas, cambios o indicaciones…"></textarea>
+ <button class="send" onclick="sendOrder()">Enviar pedido por WhatsApp</button>
+ <p class="smallprint">WhatsApp abrirá un mensaje con el resumen de tu pedido. El pedido no queda confirmado hasta que el negocio responda. WhatsApp configurado para recibir pedidos del negocio.</p>
+</dialog>
+<script>
+/* WhatsApp de BURGER BUDYS: código de país +52, solo dígitos. */
+const WHATSAPP_NUMBER = "527297181966";
+const sections = [
+ {id:"hamburguesas",title:"Hamburguesas",emoji:"🍔",items:[
+ ["Blue Chesse",110,"Pollo crujiente 150 g, queso americano y manchego, aderezo, lechuga, jitomate, cebolla y pepinillo."],
+ ["Hawaiana",125,"Arrachera o sirloin 150 g, queso americano y manchego, jamón, lechuga, jitomate, cebolla y piña."],
+ ["Hot BBQ",110,"Arrachera o sirloin 150 g, queso americano y manchego, aderezo, lechuga, jitomate, cebolla y chiles."],
+ ["Premium",140,"Doble arrachera o sirloin (300 g), queso americano y manchego, salchicha, jamón, tocino, lechuga, jitomate, cebolla y chiles."],
+ ["Especial",125,"Arrachera o sirloin 150 g, queso americano y manchego, salchicha, jamón, tocino, lechuga, jitomate, cebolla y chiles."],
+ ["Sencilla",85,"Carne de res 100 g, queso americano y manchego, lechuga, jitomate, cebolla y chiles."]
+ ]},
+ {id:"tacos",title:"Tacos",emoji:"🌮",items:[
+ ["Bisteck",30,"100 g. Nopales, cebolla y papas."],["Adobada",30,"100 g. Nopales, cebolla y papas."],["Cecina",45,"100 g. Nopales, cebolla y papas."],["Arrachera",45,"100 g. Nopales, cebolla y papas."]
+ ]},
+ {id:"burritos",title:"Burritos",emoji:"🌯",items:[
+ ["Sencillo",85,"125 g de carne de res, frijoles, queso manchego, papas y chiles toreados."],["Especial",100,"125 g de arrachera, frijoles, queso manchego, papas y chiles toreados."]
+ ]},
+ {id:"alitas",title:"Alitas & Boneless",emoji:"🍗",items:[
+ ["Orden de alitas",95,"Orden de alitas, acompañada de salsa."],["Orden de boneless",110,"Orden de boneless, acompañada de salsa."]
+ ]},
+ {id:"bebidas",title:"Bebidas",emoji:"🥤",items:[
+ ["Jarra de agua",100,"Sabores disponibles: fresa con horchata, piña colada, limón con chía y mango."],
+ ["Boing",30,"Bebida individual."],["Coca-Cola",30,"Refresco."],["Manzanita",30,"Refresco."],["Sprite",30,"Refresco."],
+ ["Agua artesanal: horchata-fresa",30,"Agua artesanal."],["Agua artesanal: limón-chía",30,"Agua artesanal."],["Agua artesanal: guayaba-hierbabuena",30,"Agua artesanal."],["Agua artesanal: jamaica",30,"Agua artesanal."],["Agua artesanal: horchata-chocolate",30,"Agua artesanal."]
+ ]}
+];
+const cart = new Map();
+const money = n => n.toLocaleString("es-MX",{style:"currency",currency:"MXN",maximumFractionDigits:0});
+function renderMenu(){
+ document.getElementById("menu").innerHTML=sections.map(s=>`<section class="section" id="${s.id}"><div class="section-title"><span class="emoji">${s.emoji}</span><h2>${s.title}</h2></div><div class="grid">${s.items.map((p,i)=>{const id=s.id+"-"+i;return `<article class="item"><div class="item-top"><h3>${p[0]}</h3><span class="price">${money(p[1])}</span></div><p class="desc">${p[2]}</p><button class="add" onclick="addItem('${id}')">＋ Agregar al pedido</button></article>`}).join("")}</div></section>`).join("");
+}
+function getProduct(id){for(const s of sections){const i= s.items.findIndex((p,j)=>s.id+"-"+j===id);if(i>=0)return {p:s.items[i],section:s};}}
+function addItem(id){const found=getProduct(id);if(!found)return;const old=cart.get(id);cart.set(id,{name:found.p[0],price:found.p[1],qty:(old?.qty||0)+1});updateCart();}
+function changeQty(id,delta){const it=cart.get(id);if(!it)return;it.qty+=delta;if(it.qty<=0)cart.delete(id);updateCart();renderCart();}
+function total(){return [...cart.values()].reduce((sum,x)=>sum+x.price*x.qty,0)}
+function updateCart(){const count=[...cart.values()].reduce((s,x)=>s+x.qty,0);document.getElementById("cartCount").textContent=`${count} ${count===1?"producto":"productos"}`;document.getElementById("cartTotal").textContent=money(total());document.getElementById("dialogTotal").textContent=money(total());}
+function renderCart(){const el=document.getElementById("cartItems");if(!cart.size){el.innerHTML='<p>Tu carrito está vacío. Agrega algo rico del menú.</p>'; }else{el.innerHTML=[...cart.entries()].map(([id,x])=>`<div class="cartline"><div><strong>${x.name}</strong><div class="smallprint">${money(x.price)} c/u · ${money(x.price*x.qty)}</div></div><div class="qty"><button onclick="changeQty('${id}',-1)">−</button><strong>${x.qty}</strong><button onclick="changeQty('${id}',1)">+</button></div></div>`).join("");}updateCart();}
+function openCart(){renderCart();document.getElementById("cartDialog").showModal();}
+function closeCart(){document.getElementById("cartDialog").close();}
+function toggleTransferInfo(){document.getElementById("transferInfo").style.display=document.getElementById("payment").value==="Transferencia SPIN OXXO"?"block":"none";}
+function sendOrder(){
+ if(!cart.size){alert("Agrega al menos un producto antes de enviar tu pedido.");return;}
+ if(!/^\d{10,15}$/.test(WHATSAPP_NUMBER)){alert("El número de WhatsApp del negocio no está configurado correctamente.");return;}
+ const name=document.getElementById("customer").value.trim()||"Cliente";
+ const service=document.getElementById("service").value.trim();
+ const address=document.getElementById("address").value.trim();
+ const notes=document.getElementById("notes").value.trim();
+ let msg=`🎄 *PEDIDO BURGER BUDYS* 🎁\n\n👤 Nombre: ${name}\n\n`;
+ for(const x of cart.values())msg+=`• ${x.qty} x ${x.name} — ${money(x.price*x.qty)}\n`;
+ msg+=`\n🍟 Todas nuestras órdenes llevan papas.\n💰 *TOTAL ESTIMADO: ${money(total())}*\n📦 Entrega: ${service}`;
+ if(address)msg+=`\n📍 Dirección: ${address}`;
+ if(notes)msg+=`\n📝 Notas: ${notes}`;
+ msg+="\n\n¿Me confirman disponibilidad y tiempo de entrega? Gracias.";
+ window.location.href=`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+}
+renderMenu();updateCart();
+</script>
+</body>
+</html>
